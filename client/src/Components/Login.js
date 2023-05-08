@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import Login from './UserFunction'
+import {login} from './UserFunction'
 
-export default class login extends Component {
+export default class Login extends Component {
 
     constructor(){
         super()
         this.state = {
-            email: " ",
-            password: " "
+            email: "",
+            password: ""
         }
 
         this.onChange = this.onChange.bind(this)
@@ -28,7 +28,7 @@ export default class login extends Component {
 
         login(user).then(res => {
             if(res){
-                this.props.history.push(`/profile`)
+                this.props.history(`/profile`)
             }
         })
 
@@ -57,7 +57,7 @@ export default class login extends Component {
                         </div>
 
                         <div className='form-group'>
-                            <label htmlFor='password'>password</label>
+                            <label htmlFor='password'>Password</label>
                             <input
                                 type="password"
                                 className='form-control'

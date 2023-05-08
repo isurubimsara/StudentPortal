@@ -13,7 +13,7 @@ export const register = newUser => {
             alert("Registered")
         })
         .catch((err) => {
-            console.log(`error: ${err}`)
+            console.log(err)
             alert("error :"+err)
         })
 
@@ -21,7 +21,7 @@ export const register = newUser => {
 
 export const login = user => {
     return axios
-         .post('user/login', {
+         .post('users/login', {
              email: user.email,
              password: user.password
          })
